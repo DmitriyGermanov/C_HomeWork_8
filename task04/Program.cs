@@ -6,7 +6,7 @@
 // 10 09 08 07
 
 
-int[,] FillArray(int[,] array) //Функция заполняет массив двузначными целыми числами по спирали
+int[,] FillArray(int[,] array) //Функция заполняет массив двузначными целыми числами по спирали с числа 10 (для красоты)
 {
     int count1 = 0;
     int number = 10;
@@ -21,21 +21,17 @@ int[,] FillArray(int[,] array) //Функция заполняет массив 
         {
             array[j, (array.GetLength(1) - 1) - count1] = number;
             number++;
-
         }
-        for (int k = ((array.GetLength(1) - 1) - (count1 + 1)); k >= count1;)
+        for (int k = ((array.GetLength(1) - 1) - (count1 + 1)); k >= count1; k -= 1)
         {
             array[(array.GetLength(0) - 1) - count1, k] = number;
             number++;
-            k -= 1;
         }
-        for (int l = ((array.GetLength(0) - 1) - (count1 + 1)); l >= (count1 + 1);)
+        for (int l = ((array.GetLength(0) - 1) - (count1 + 1)); l >= (count1 + 1); l -= 1)
         {
             array[l, count1] = number;
-            l -= 1;
             number++;
         }
-
         count1++;
     }
 
