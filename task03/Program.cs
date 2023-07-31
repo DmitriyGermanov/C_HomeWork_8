@@ -12,9 +12,9 @@ int GetNumber(string text) // Функция запрашивает у поль�
     return int.Parse(Console.ReadLine()!);
 }
 
-int[,,] FillArray(int lines, int columns, int depth) //Функция заполняет трехмерный массив случайными неповторяющемися целыми числами от 0 до 999
+int[,,] FillArray(int depth, int lines, int columns) //Функция заполняет трехмерный массив случайными неповторяющемися целыми числами от 0 до 999
 {
-    int[,,] array = new int[lines, columns, depth];
+    int[,,] array = new int[depth, lines, columns];
     int[] arrayLine = new int[array.GetLength(0) * array.GetLength(1) * array.GetLength(2)];
     Random random = new Random();
     for (int i = 0; i < arrayLine.Length; i++)
