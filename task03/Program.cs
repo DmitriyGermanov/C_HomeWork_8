@@ -62,7 +62,7 @@ int[,,] mainArray = FillArray(GetNumber("Введите глубину:"),
                            GetNumber("Введите количество строк:"),
                            GetNumber("Введите столбцов:"));
 if ((mainArray.GetLength(0) * mainArray.GetLength(1) * mainArray.GetLength(2)) > 89)
-    Console.WriteLine("Количество элементов массива более 999, уменьшите количество строк, столбцов или глубину");
+    Console.WriteLine("Количество элементов массива более 89, уменьшите количество строк, столбцов или глубину");
 else
 {
     PrintArray(mainArray);
