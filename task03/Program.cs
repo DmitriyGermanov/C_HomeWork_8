@@ -12,21 +12,21 @@ int GetNumber(string text) // Функция запрашивает у поль�
     return int.Parse(Console.ReadLine()!);
 }
 
-int[,,] FillArray(int depth, int lines, int columns) //Функция заполняет трехмерный массив случайными неповторяющемися целыми числами от 0 до 999
+int[,,] FillArray(int depth, int lines, int columns) //Функция заполняет трехмерный массив случайными неповторяющемися целыми числами от 10 до 99
 {
     int[,,] array = new int[depth, lines, columns];
     int[] arrayLine = new int[array.GetLength(0) * array.GetLength(1) * array.GetLength(2)];
     Random random = new Random();
     for (int i = 0; i < arrayLine.Length; i++)
     {
-        arrayLine[i] = random.Next(0, 1000);
+        arrayLine[i] = random.Next(10, 100);
         if (i != 0)
         {
             for (int j = 0; j < i; j++)
             {
                 while (arrayLine[j] == arrayLine[i])
                 {
-                    arrayLine[j] = random.Next(0, 1000);
+                    arrayLine[j] = random.Next(10, 100);
                 }
             }
         }
@@ -61,7 +61,7 @@ void PrintArray(int[,,] array) //Функция печатает массив
 int[,,] mainArray = FillArray(GetNumber("Введите глубину:"),
                            GetNumber("Введите количество строк:"),
                            GetNumber("Введите столбцов:"));
-if ((mainArray.GetLength(0) * mainArray.GetLength(1) * mainArray.GetLength(2)) > 999)
+if ((mainArray.GetLength(0) * mainArray.GetLength(1) * mainArray.GetLength(2)) > 89)
     Console.WriteLine("Количество элементов массива более 999, уменьшите количество строк, столбцов или глубину");
 else
 {
