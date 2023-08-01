@@ -13,28 +13,16 @@ int[,] FillArray(int[,] array) //Функция заполняет массив 
     while (count1 < (array.GetLength(1) - 1 - count1))
     {
         for (int i = count1; i < (array.GetLength(1) - count1); i++)
-        {
-            array[count1, i] = number;
-            number++;
-        }
+            array[count1, i] = number++;
         for (int j = count1 + 1; j < (array.GetLength(0) - count1); j++)
-        {
-            array[j, (array.GetLength(1) - 1) - count1] = number;
-            number++;
-        }
+            array[j, (array.GetLength(1) - 1) - count1] = number++;
         for (int k = ((array.GetLength(1) - 1) - (count1 + 1)); k >= count1; k -= 1)
-        {
-            array[(array.GetLength(0) - 1) - count1, k] = number;
-            number++;
-        }
+            array[(array.GetLength(0) - 1) - count1, k] = number++;
         for (int l = ((array.GetLength(0) - 1) - (count1 + 1)); l >= (count1 + 1); l -= 1)
-        {
-            array[l, count1] = number;
-            number++;
-        }
+            array[l, count1] = number++;
+
         count1++;
     }
-
     return array;
 }
 
