@@ -27,7 +27,7 @@ int[,,] FillArray(int depth, int lines, int columns) //Функция запол
                 while (arrayLine[j] == arrayLine[i])
                 {
                     arrayLine[i] = random.Next(10, 100);
-j=0;
+                    j = 0;
                 }
             }
         }
